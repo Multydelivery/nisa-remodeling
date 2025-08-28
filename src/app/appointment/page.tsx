@@ -1,0 +1,27 @@
+
+export default function Appointment() {
+  return (
+    <section className="w-full min-h-[70vh] flex flex-col items-center justify-center px-2 sm:px-4 py-8 sm:py-16 bg-gradient-to-br from-black via-gray-900 rounded-xl shadow-2xl">
+      <h1 className="text-3xl sm:text-5xl font-extrabold mb-6 text-yellow-400 text-center drop-shadow-glow">Make an Appointment</h1>
+      <form className="bg-black/60 rounded-lg p-4 sm:p-8 shadow-lg border border-yellow-400/20 w-full max-w-sm sm:max-w-md mx-auto">
+        <div className="mb-4">
+          <label className="block mb-2 text-yellow-300 font-semibold" htmlFor="name">Name</label>
+          <input className="w-full px-3 py-2 rounded bg-gray-900 text-yellow-400 border border-yellow-400/30 focus:outline-none focus:ring-2 focus:ring-yellow-400" type="text" id="name" name="name" placeholder="Your Name" />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-yellow-300 font-semibold" htmlFor="email">Email</label>
+          <input className="w-full px-3 py-2 rounded bg-gray-900 text-yellow-400 border border-yellow-400/30 focus:outline-none focus:ring-2 focus:ring-yellow-400" type="email" id="email" name="email" placeholder="Your Email" />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-yellow-300 font-semibold" htmlFor="date">Preferred Date</label>
+          <input className="w-full px-3 py-2 rounded bg-gray-900 text-yellow-400 border border-yellow-400/30 focus:outline-none focus:ring-2 focus:ring-yellow-400" type="date" id="date" name="date" />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-yellow-300 font-semibold" htmlFor="details">Details</label>
+          <textarea className="w-full px-3 py-2 rounded bg-gray-900 text-yellow-400 border border-yellow-400/30 focus:outline-none focus:ring-2 focus:ring-yellow-400" id="details" name="details" rows={4} placeholder="Describe your appointment request" />
+        </div>
+        <button type="submit" className="w-full bg-yellow-400 text-black py-2 rounded font-bold hover:bg-yellow-500 transition">Book Appointment</button>
+      </form>
+    </section>
+  );
+}

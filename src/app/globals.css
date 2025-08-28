@@ -24,3 +24,49 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- Site background / visual utilities --- */
+
+/* animated gradient utility used in layout.tsx */
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradientShift 18s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* soft glowing text shadow for headings/logo */
+.drop-shadow-glow {
+  text-shadow: 0 6px 18px rgba(255,200,50,0.06), 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* subtle glass effect for content container */
+.glassmorphism {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+/* subtle grain/noise texture overlay for depth */
+.bg-noise {
+  background-image:
+    radial-gradient(circle at 2% 2%, rgba(255,255,255,0.02) 0, transparent 2%),
+    radial-gradient(circle at 98% 80%, rgba(255,255,255,0.02) 0, transparent 2%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 6px);
+  mix-blend-mode: overlay;
+}
+
+/* utility to subtly pulse elements (used for decorative blob) */
+.animate-pulse-slow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
+@keyframes pulseSlow {
+  0% { transform: scale(0.995); opacity: 0.28 }
+  50% { transform: scale(1.02); opacity: 0.38 }
+  100% { transform: scale(0.995); opacity: 0.28 }
+}
+

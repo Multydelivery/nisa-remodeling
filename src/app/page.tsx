@@ -1,103 +1,91 @@
+
 import Image from "next/image";
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <section className="w-full min-h-[70vh] flex flex-col items-center justify-center px-4 py-16 sm:py-24 bg-gradient-to-br from-black via-gray-900 rounded-xl shadow-2xl">
+      {/* Logo Placeholder */}
+      <div className="mb-8 flex justify-center">
+        {/* Center-cropped logo: container masks image and Image uses fill+object-cover */}
+        <div className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-black/20 shadow-lg">
+          <Image
+            src="/nissaremodelinglogoscshot.jpeg"
+            alt="NISA REMODELING logo"
+            fill
+            priority
+            className="object-cover object-center"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+      {/* Company Name & Tagline */}
+      <h1 className="text-4xl sm:text-6xl font-extrabold mb-4 text-yellow-400 text-center drop-shadow-glow">NISA REMODELING</h1>
+      <h2 className="text-xl sm:text-3xl font-semibold mb-8 text-yellow-200 text-center">High-end bathroom design</h2>
+      {/* Contact Info */}
+      <div className="mb-8 text-center">
+        <p className="text-base sm:text-lg text-yellow-100 mb-3">Want a free consultation? Call us now.</p>
+        <a href="tel:+17869331329" className="inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 transition">+1 (786) 933-1329</a>
+        <p className="mt-4 text-sm text-yellow-200/80">Be, think, do = éxito 💪💪💪🙏🧿</p>
+      </div>
+      {/* Services Section */}
+      <section className="w-full max-w-3xl mb-8">
+        <h3 className="text-2xl sm:text-4xl font-bold mb-6 text-center text-yellow-400">Our Services</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <article className="bg-black/50 rounded-lg overflow-hidden shadow border border-yellow-400/10">
+            <div className="relative w-full h-56">
+              <Image src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" alt="luxury bathroom" fill className="object-cover" />
+            </div>
+            <div className="p-4 text-yellow-200">
+              <h4 className="font-bold text-lg">Luxury bathroom remodeling</h4>
+              <p className="mt-2 text-sm">Full renovations with premium fixtures and finishes.</p>
+            </div>
+          </article>
+
+          <article className="bg-black/50 rounded-lg overflow-hidden shadow border border-yellow-400/10">
+            <div className="relative w-full h-56">
+              <Image src="https://images.unsplash.com/photo-1505691723518-36a0b5c4f3c0?auto=format&fit=crop&w=1200&q=80" alt="design consultation" fill className="object-cover" />
+            </div>
+            <div className="p-4 text-yellow-200">
+              <h4 className="font-bold text-lg">Custom design & consultation</h4>
+              <p className="mt-2 text-sm">Bespoke layouts and material selection guidance.</p>
+            </div>
+          </article>
+
+          <article className="bg-black/50 rounded-lg overflow-hidden shadow border border-yellow-400/10">
+            <div className="relative w-full h-56">
+              <Image src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="materials finishes" fill className="object-cover" />
+            </div>
+            <div className="p-4 text-yellow-200">
+              <h4 className="font-bold text-lg">High-end materials & finishes</h4>
+              <p className="mt-2 text-sm">Marble, custom cabinetry, designer fixtures.</p>
+            </div>
+          </article>
+
+          <article className="bg-black/50 rounded-lg overflow-hidden shadow border border-yellow-400/10">
+            <div className="relative w-full h-56">
+              <Image src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="project management" fill className="object-cover" />
+            </div>
+            <div className="p-4 text-yellow-200">
+              <h4 className="font-bold text-lg">Project management</h4>
+              <p className="mt-2 text-sm">End-to-end coordination and scheduling.</p>
+            </div>
+          </article>
+
+          <article className="bg-black/50 rounded-lg overflow-hidden shadow border border-yellow-400/10">
+            <div className="relative w-full h-56">
+              <Image src="https://images.unsplash.com/photo-1505692794400-8a2ed6c3b14b?auto=format&fit=crop&w=1200&q=80" alt="residential commercial" fill className="object-cover" />
+            </div>
+            <div className="p-4 text-yellow-200">
+              <h4 className="font-bold text-lg">Residential & commercial</h4>
+              <p className="mt-2 text-sm">Services for homes and businesses of all sizes.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      {/* Footer */}
+      <footer className="mt-auto pt-8 text-center text-white-600">
+        &copy; {new Date().getFullYear()} NISA REMODELING. All rights reserved.
       </footer>
-    </div>
+    </section>
   );
 }
