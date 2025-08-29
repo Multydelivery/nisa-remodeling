@@ -25,6 +25,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Heading display font (Playfair Display) */
+h1, h2, h3, h4, .display-title {
+  font-family: var(--font-playfair), var(--font-geist-sans), serif;
+}
+
 /* --- Site background / visual utilities --- */
 
 /* animated gradient utility used in layout.tsx */
