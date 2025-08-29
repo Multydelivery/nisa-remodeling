@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,17 +11,18 @@ export default function Contact() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState<null | "success" | "error">(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const target = e.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    const { name, value } = target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -30,7 +31,7 @@ export default function Contact() {
       await new Promise(resolve => setTimeout(resolve, 1500));
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -153,7 +154,7 @@ export default function Contact() {
             
             {submitStatus === "success" && (
               <div className="mb-7 p-5 bg-green-900/30 border border-green-400/50 rounded-lg text-green-400 text-base animate-fade-in">
-                Thank you for your message! We'll get back to you within 24 hours.
+                Thank you for your message! We&apos;ll get back to you within 24 hours.
               </div>
             )}
             

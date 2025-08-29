@@ -128,10 +128,10 @@ export function Navbar() {
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
     <Link
       href={href}
-      className={`px-3 py-2 rounded-md transition-all duration-200 bg-amber-500 ${
-        isActive(href) 
-          ? "text-blue-500 bg-amber-400/10 border border-amber-400/20" 
-          : "text-blue-950 hover:text-amber-400 hover:bg-amber-400/5"
+      className={`px-3 py-2 rounded-md transition-all duration-200 ${
+        isActive(href)
+          ? "text-amber-400 bg-amber-400/10 border border-amber-400/20"
+          : "text-amber-200 hover:text-amber-300 hover:bg-amber-400/5"
       }`}
       onClick={() => setOpen(false)}
     >
@@ -161,8 +161,8 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1 bg-amber-950">
+  {/* Desktop Navigation */}
+  <div className="hidden md:flex items-center gap-3 ml-auto whitespace-nowrap bg-black/20 px-2 py-1 rounded-md">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/projects">Projects</NavLink>
           <NavLink href="/services">Services</NavLink>
@@ -194,10 +194,12 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
+          ref={btnRef}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 rounded-md text-amber-300 bg-amber-400/10 hover:bg-amber-400/20 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-200"
+          className={`md:hidden p-2 rounded-md text-amber-300 bg-amber-400/10 hover:bg-amber-400/20 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-200 ${isHidden ? 'opacity-0 pointer-events-none -translate-y-2' : 'opacity-100 translate-y-0'}`}
         >
           <div className="w-6 h-6 relative">
             <span className={`block absolute left-0 right-0 h-0.5 bg-current transform transition duration-200 ${open ? "rotate-45 top-2.5" : "-translate-y-1 top-1"}`} />
@@ -214,7 +216,7 @@ export function Navbar() {
             aria-hidden 
           />
           
-          <div className={`absolute right-0 top-0 h-full w-80 max-w-full bg-gradient-to-b from-black via-gray-900 to-black p-6 border-l border-amber-400/20 shadow-2xl transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}>
+          <div ref={panelRef} id="mobile-menu" role="dialog" aria-modal="true" tabIndex={-1} className={`absolute right-0 top-0 h-full w-80 max-w-full bg-gradient-to-b from-black via-gray-900 to-black p-6 border-l border-amber-400/20 shadow-2xl transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}>
             <div className="flex justify-between items-center mb-8">
               <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
                 <span className={`${bebas.className} text-white text-3xl font-extrabold`}>NISA</span>

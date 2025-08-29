@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ export default function Appointment() {
     details: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState<null | "success" | "error">(null);
   const [selectedDate, setSelectedDate] = useState("");
 
   const services = [
@@ -40,15 +40,16 @@ export default function Appointment() {
     "Phone Consultation"
   ];
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const target = e.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    const { name, value } = target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
-  const handleDateSelect = (e) => {
+  const handleDateSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const date = e.target.value;
     setSelectedDate(date);
     setFormData(prev => ({
@@ -57,7 +58,7 @@ export default function Appointment() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -76,7 +77,7 @@ export default function Appointment() {
         details: "" 
       });
       setSelectedDate("");
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

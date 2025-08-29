@@ -129,8 +129,8 @@ export default function Projects() {
 
       {/* Projects grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl animate-fade-in delay-300">
-        {filteredProjects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
 
@@ -138,7 +138,7 @@ export default function Projects() {
       <div className="mt-20 text-center animate-fade-in delay-500">
         <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-400">Inspired by Our Work?</h3>
         <p className="text-xl text-amber-200 mb-8 max-w-3xl mx-auto">
-          Let's discuss how we can transform your bathroom into a space you'll love.
+          Let&apos;s discuss how we can transform your bathroom into a space you&apos;ll love.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
@@ -160,7 +160,17 @@ export default function Projects() {
 }
 
 // Project Card Component
-const ProjectCard = ({ project, index }) => (
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  features: string[];
+  icons: React.ReactNode[];
+};
+
+const ProjectCard = ({ project }: { project: Project }) => (
   <article className="group bg-gray-800/40 rounded-xl overflow-hidden shadow-xl border border-amber-400/20 hover:border-amber-400/40 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full">
     <div className="relative w-full h-72 overflow-hidden">
       <Image 

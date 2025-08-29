@@ -52,7 +52,7 @@ export default function Home() {
         <h3 className="text-3xl sm:text-5xl font-bold mb-10 text-center text-amber-400">Our Services</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
+            <ServiceCard key={index} service={service} />
           ))}
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function Home() {
       <section className="w-full max-w-4xl mb-12 animate-fade-in delay-600">
         <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-amber-400">What Our Clients Say</h3>
         <div className="bg-gray-800/50 rounded-xl p-8 border border-amber-400/30">
-          <p className="text-amber-100 italic text-center text-lg">"NISA Remodeling transformed our outdated bathroom into a luxurious spa-like retreat. Their attention to detail and quality craftsmanship exceeded our expectations!"</p>
+          <p className="text-amber-100 italic text-center text-lg">NISA Remodeling transformed our outdated bathroom into a luxurious spa-like retreat. Their attention to detail and quality craftsmanship exceeded our expectations!</p>
           <p className="text-amber-400 text-center mt-6 font-semibold text-base">- Maria Rodriguez, Miami</p>
         </div>
       </section>
@@ -91,7 +91,13 @@ export default function Home() {
 }
 
 // Service Card Component
-const ServiceCard = ({ service, index }) => (
+type Service = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+const ServiceCard = ({ service }: { service: Service }) => (
   <article className="bg-gray-800/40 rounded-xl overflow-hidden shadow-lg border border-amber-400/20 group hover:border-amber-400/40 transition-all duration-500 hover:scale-105 transform h-full flex flex-col">
     <div className="relative w-full h-64 overflow-hidden">
       <Image 
