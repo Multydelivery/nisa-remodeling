@@ -24,4 +24,4 @@ Replace placeholder images and text with your actual company assets and informat
 ---
 
 Created: August 17, 2025
-"This branch to practice DevOps and pull request"
+"This branch is to practice DevOps and pull requests"
