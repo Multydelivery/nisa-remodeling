@@ -42,6 +42,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname() || "/";
   const navRef = useRef<HTMLElement>(null);
   const btnRef = useRef<HTMLButtonElement | null>(null);
@@ -57,20 +58,39 @@ export function Navbar() {
       const isScrolled = currentScrollY > 20;
       setScrolled(isScrolled);
       
-      // Hide navbar when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        // Scrolling down
-        setIsHidden(true);
-      } else if (currentScrollY < lastScrollY.current) {
-        // Scrolling up
-        setIsHidden(false);
+      // Hide navbar when scrolling down (only on mobile), show when scrolling up
+  if (isMobile) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+          // Scrolling down
+          setIsHidden(true);
+        } else if (currentScrollY < lastScrollY.current) {
+          // Scrolling up
+          setIsHidden(false);
+        }
       }
+
+      // Close mobile menu when the user scrolls (helps avoid overlay remaining open)
+  if (open) setOpen(false);
       
       lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile, open]);
+
+  // Track viewport size so hide-on-scroll only applies to small screens
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = (ev: MediaQueryListEvent) => setIsMobile(ev.matches);
+    setIsMobile(mq.matches);
+    // modern browsers: addEventListener; fallback to addListener
+    if (typeof mq.addEventListener === "function") mq.addEventListener("change", update as EventListener);
+    else mq.addListener(update as unknown as EventListener);
+    return () => {
+      if (typeof mq.removeEventListener === "function") mq.removeEventListener("change", update as EventListener);
+      else mq.removeListener(update as unknown as EventListener);
+    };
   }, []);
 
   // Close mobile menu with Escape key
@@ -118,6 +138,36 @@ export function Navbar() {
     return () => {
       document.body.style.overflow = original;
     };
+  }, [open]);
+
+  // Simple focus trap for the mobile panel when open
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusable = panel.querySelectorAll<HTMLElement>(
+        'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
   }, [open]);
 
   const isActive = (path: string) => {
