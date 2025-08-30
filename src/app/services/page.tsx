@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 export default function Services() {
-  const [activeService, setActiveService] = useState(null);
+  const [activeService, setActiveService] = useState<number | null>(null);
 
   const services = [
     {
@@ -117,9 +116,9 @@ export default function Services() {
 
       {/* Services grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mb-16 animate-fade-in delay-200">
-        {services.map((service, index) => (
-          <div 
-            key={service.id}
+        {services.map((service) => (
+            <div 
+              key={service.id}
             className={`bg-gray-800/40 rounded-xl p-7 shadow-lg border border-amber-400/20 hover:border-amber-400/40 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer ${
               activeService === service.id ? "border-amber-400/60 bg-amber-400/10" : ""
             }`}
