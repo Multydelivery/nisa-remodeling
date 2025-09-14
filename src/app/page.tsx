@@ -29,7 +29,6 @@ export default function Home() {
       {/* Company Name & Tagline */}
       <div className="text-center mb-10">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-stone-300 drop-shadow-md animate-fade-in">
-          NISA REMODELING
         </h1>
         <h2 className="text-lg sm:text-2xl font-medium text-stone-200 animate-fade-in delay-100">
           High-end Bathroom Design & Remodeling

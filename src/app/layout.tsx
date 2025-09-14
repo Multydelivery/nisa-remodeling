@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins, Bebas_Neue, Inter, Playfair_Display } from 
 import "./globals.css";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import Footer from "../components/Footer";
 import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
@@ -343,6 +344,8 @@ export default function RootLayout({
         <main className="pt-24 px-3 sm:px-6 max-w-[92%] sm:max-w-5xl mx-auto glassmorphism rounded-xl shadow-2xl border border-yellow-400/10 mt-6 mb-8">
           {children}
         </main>
+
+        <Footer />
       </body>
     </html>
   );
