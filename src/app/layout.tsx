@@ -330,7 +330,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${inter.className} ${playfair.variable} antialiased min-h-screen bg-gradient-to-br from-black via-gray-900 to-yellow-900 relative overflow-x-hidden`}>
+  <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${inter.className} ${playfair.variable} antialiased min-h-screen bg-gradient-to-br from-black via-gray-900 to-yellow-900 relative overflow-x-hidden`}>
         {/* Futuristic animated background */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="w-full h-full bg-gradient-to-br from-yellow-400/8 via-black/85 to-yellow-900/18 animate-gradient-x" />

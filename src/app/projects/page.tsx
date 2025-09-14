@@ -94,18 +94,19 @@ export default function Projects() {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section className="w-full min-h-screen flex flex-col items-center px-4 py-16 sm:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 rounded-xl shadow-2xl relative overflow-hidden">
+  <section className="w-full min-h-screen flex flex-col items-center px-4 py-12 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-xl shadow-2xl relative overflow-hidden border border-slate-700/20 ring-1 ring-slate-700/10">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-72 h-72 bg-amber-400/5 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+  <div className="absolute top-0 right-0 w-72 h-72 bg-slate-400/6 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 pointer-events-none" />
       </div>
 
-      <div className="text-center mb-14 max-w-4xl">
-        <h1 className="text-5xl sm:text-7xl font-bold mb-6 text-amber-400 drop-shadow-md animate-fade-in">
+      <div className="text-center mb-10 max-w-4xl">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-stone-200 drop-shadow-md animate-fade-in">
           Our Projects
         </h1>
-        <p className="text-xl sm:text-3xl text-amber-200 animate-fade-in delay-100">
+        <p className="text-base sm:text-lg text-stone-300 animate-fade-in delay-100">
           Showcase of high-end bathroom remodeling projects — a selection of recent work that highlights materials, lighting, and craftsmanship.
         </p>
       </div>
@@ -118,8 +119,8 @@ export default function Projects() {
             onClick={() => setActiveFilter(filter.id)}
             className={`px-6 py-3 rounded-full text-base font-medium transition-all duration-300 ${
               activeFilter === filter.id
-                ? "bg-amber-400 text-gray-900 shadow-lg font-bold"
-                : "bg-gray-800/50 text-amber-200 border border-amber-400/30 hover:bg-amber-400/10 hover:border-amber-400/50"
+                ? "bg-slate-200 text-gray-900 shadow-lg font-bold"
+                : "bg-gray-800/50 text-stone-300 border border-slate-700/20 hover:bg-slate-300/6 hover:border-slate-500/30"
             }`}
           >
             {filter.label}
@@ -135,26 +136,26 @@ export default function Projects() {
       </div>
 
       {/* Call to action */}
-      <div className="mt-20 text-center animate-fade-in delay-500">
-        <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-400">Inspired by Our Work?</h3>
-        <p className="text-xl text-amber-200 mb-8 max-w-3xl mx-auto">
-          Let&apos;s discuss how we can transform your bathroom into a space you&apos;ll love.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <a 
-            href="/contact" 
-            className="px-8 py-4 bg-amber-400 text-gray-900 font-bold rounded-full shadow-lg hover:bg-amber-500 hover:scale-105 transition-all duration-300 transform text-center text-lg"
-          >
-            Start Your Project
-          </a>
-          <a 
-            href="/quote" 
-            className="px-8 py-4 bg-transparent border-2 border-amber-400 text-amber-400 font-bold rounded-full shadow-lg hover:bg-amber-400/10 hover:scale-105 transition-all duration-300 transform text-center text-lg"
-          >
-            Get a Quote
-          </a>
+      <div className="mt-16 text-center animate-fade-in delay-500">
+          <h3 className="text-2xl sm:text-3xl font-semibold mb-4 text-stone-200">Inspired by Our Work?</h3>
+          <p className="text-base text-stone-300 mb-8 max-w-3xl mx-auto">
+            Let&apos;s discuss how we can transform your bathroom into a space you&apos;ll love.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <a 
+              href="/contact" 
+              className="px-8 py-3 bg-slate-200 text-gray-900 font-bold rounded-full shadow-lg hover:bg-slate-300 hover:scale-105 transition-all duration-300 transform text-center text-base"
+            >
+              Start Your Project
+            </a>
+            <a 
+              href="/quote" 
+              className="px-8 py-3 bg-transparent border-2 border-slate-700 text-stone-200 font-bold rounded-full shadow-lg hover:bg-slate-300/6 hover:scale-105 transition-all duration-300 transform text-center text-base"
+            >
+              Get a Quote
+            </a>
+          </div>
         </div>
-      </div>
     </section>
   );
 }

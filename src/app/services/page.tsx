@@ -98,18 +98,19 @@ export default function Services() {
   ];
 
   return (
-    <section className="w-full min-h-screen flex flex-col items-center px-4 py-16 sm:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 rounded-xl shadow-2xl relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col items-center px-4 py-12 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-xl shadow-2xl relative overflow-hidden border border-slate-700/20 ring-1 ring-slate-700/10">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-amber-400/5 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+  <div className="absolute top-0 left-0 w-72 h-72 bg-slate-400/6 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 pointer-events-none" />
       </div>
 
-      <div className="text-center mb-14 max-w-4xl">
-        <h1 className="text-5xl sm:text-7xl font-bold mb-6 text-amber-400 drop-shadow-md animate-fade-in">
+      <div className="text-center mb-10 max-w-4xl">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-stone-200 drop-shadow-md animate-fade-in">
           Our Services
         </h1>
-        <p className="text-xl sm:text-3xl text-amber-200 animate-fade-in delay-100">
+        <p className="text-base sm:text-lg text-stone-300 animate-fade-in delay-100">
           Comprehensive bathroom remodeling services that transform your space with quality craftsmanship and attention to detail.
         </p>
       </div>
@@ -119,16 +120,16 @@ export default function Services() {
         {services.map((service) => (
             <div 
               key={service.id}
-            className={`bg-gray-800/40 rounded-xl p-7 shadow-lg border border-amber-400/20 hover:border-amber-400/40 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer ${
-              activeService === service.id ? "border-amber-400/60 bg-amber-400/10" : ""
+            className={`bg-gray-800/40 rounded-xl p-7 shadow-lg border border-slate-700/20 hover:border-slate-500/30 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer ${
+              activeService === service.id ? "border-slate-300/40 bg-slate-300/6" : ""
             }`}
             onClick={() => setActiveService(activeService === service.id ? null : service.id)}
           >
-            <div className="text-amber-400 mb-5">
+            <div className="text-slate-300 mb-5">
               {service.icon}
             </div>
-            <h2 className="text-2xl font-bold mb-4 text-amber-100">{service.title}</h2>
-            <p className="text-amber-200 mb-5">
+            <h2 className="text-2xl font-bold mb-4 text-stone-100">{service.title}</h2>
+            <p className="text-stone-300 mb-5">
               {service.description}
             </p>
             
@@ -139,8 +140,8 @@ export default function Services() {
                 </p>
                 <ul className="space-y-3">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-amber-200/80 text-base">
-                      <svg className="w-5 h-5 text-amber-400 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li key={i} className="flex items-center text-stone-300/80 text-base">
+                          <svg className="w-5 h-5 text-slate-300 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       {feature}
@@ -150,7 +151,7 @@ export default function Services() {
               </div>
             )}
             
-            <div className="mt-5 text-amber-400 text-base font-medium flex items-center">
+            <div className="mt-5 text-stone-300 text-base font-medium flex items-center">
               {activeService === service.id ? "Click to collapse" : "Click for details"}
               <svg className={`w-5 h-5 ml-2 transition-transform ${activeService === service.id ? "rotate-180" : ""}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -162,55 +163,55 @@ export default function Services() {
 
       {/* Process section */}
       <div className="w-full max-w-5xl mb-16 animate-fade-in delay-300">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-amber-400 text-center">Our Process</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-stone-200 text-center">Our Process</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="w-20 h-20 bg-amber-400/10 border-2 border-amber-400/30 rounded-full flex items-center justify-center mx-auto mb-5">
-              <span className="text-3xl font-bold text-amber-400">1</span>
+            <div className="w-20 h-20 bg-slate-300/6 border-2 border-slate-700/20 rounded-full flex items-center justify-center mx-auto mb-5">
+              <span className="text-3xl font-bold text-stone-300">1</span>
             </div>
-            <h3 className="text-xl font-semibold text-amber-200 mb-3">Consultation</h3>
-            <p className="text-amber-200/80 text-base">We discuss your vision, needs, and budget</p>
+            <h3 className="text-lg font-semibold text-stone-300 mb-3">Consultation</h3>
+            <p className="text-stone-300/80 text-base">We discuss your vision, needs, and budget</p>
           </div>
           <div className="text-center">
-            <div className="w-20 h-20 bg-amber-400/10 border-2 border-amber-400/30 rounded-full flex items-center justify-center mx-auto mb-5">
-              <span className="text-3xl font-bold text-amber-400">2</span>
+            <div className="w-20 h-20 bg-slate-300/6 border-2 border-slate-700/20 rounded-full flex items-center justify-center mx-auto mb-5">
+              <span className="text-3xl font-bold text-stone-300">2</span>
             </div>
-            <h3 className="text-xl font-semibold text-amber-200 mb-3">Design</h3>
-            <p className="text-amber-200/80 text-base">We create a detailed plan and 3D visualization</p>
+            <h3 className="text-lg font-semibold text-stone-300 mb-3">Design</h3>
+            <p className="text-stone-300/80 text-base">We create a detailed plan and 3D visualization</p>
           </div>
           <div className="text-center">
-            <div className="w-20 h-20 bg-amber-400/10 border-2 border-amber-400/30 rounded-full flex items-center justify-center mx-auto mb-5">
-              <span className="text-3xl font-bold text-amber-400">3</span>
+            <div className="w-20 h-20 bg-slate-300/6 border-2 border-slate-700/20 rounded-full flex items-center justify-center mx-auto mb-5">
+              <span className="text-3xl font-bold text-stone-300">3</span>
             </div>
-            <h3 className="text-xl font-semibold text-amber-200 mb-3">Execution</h3>
-            <p className="text-amber-200/80 text-base">Our skilled team brings the design to life</p>
+            <h3 className="text-lg font-semibold text-stone-300 mb-3">Execution</h3>
+            <p className="text-stone-300/80 text-base">Our skilled team brings the design to life</p>
           </div>
           <div className="text-center">
-            <div className="w-20 h-20 bg-amber-400/10 border-2 border-amber-400/30 rounded-full flex items-center justify-center mx-auto mb-5">
-              <span className="text-3xl font-bold text-amber-400">4</span>
+            <div className="w-20 h-20 bg-slate-300/6 border-2 border-slate-700/20 rounded-full flex items-center justify-center mx-auto mb-5">
+              <span className="text-3xl font-bold text-stone-300">4</span>
             </div>
-            <h3 className="text-xl font-semibold text-amber-200 mb-3">Completion</h3>
-            <p className="text-amber-200/80 text-base">We deliver your dream bathroom with a quality guarantee</p>
+            <h3 className="text-lg font-semibold text-stone-300 mb-3">Completion</h3>
+            <p className="text-stone-300/80 text-base">We deliver your dream bathroom with a quality guarantee</p>
           </div>
         </div>
       </div>
 
       {/* Call to action */}
       <div className="text-center animate-fade-in delay-400">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-7 text-amber-400">Ready to Transform Your Bathroom?</h2>
-        <p className="text-xl text-amber-200 mb-8 max-w-3xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-stone-200">Ready to Transform Your Bathroom?</h2>
+        <p className="text-base text-stone-300 mb-8 max-w-3xl mx-auto">
           Contact us today to schedule a consultation and start your journey to the bathroom of your dreams.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
             href="/contact" 
-            className="px-8 py-4 bg-amber-400 text-gray-900 font-bold rounded-full shadow-lg hover:bg-amber-500 hover:scale-105 transition-all duration-300 transform text-center text-lg"
+            className="px-8 py-3 bg-slate-200 text-gray-900 font-bold rounded-full shadow-lg hover:bg-slate-300 hover:scale-105 transition-all duration-300 transform text-center text-base"
           >
             Schedule Consultation
           </a>
           <a 
             href="/quote" 
-            className="px-8 py-4 bg-transparent border-2 border-amber-400 text-amber-400 font-bold rounded-full shadow-lg hover:bg-amber-400/10 hover:scale-105 transition-all duration-300 transform text-center text-lg"
+            className="px-8 py-3 bg-transparent border-2 border-slate-700 text-stone-200 font-bold rounded-full shadow-lg hover:bg-slate-300/6 hover:scale-105 transition-all duration-300 transform text-center text-base"
           >
             Get a Free Quote
           </a>

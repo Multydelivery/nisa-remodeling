@@ -103,102 +103,104 @@ export default function Appointment() {
   const availableDates = getAvailableDates();
 
   return (
-  <section className="w-full min-h-screen flex flex-col items-center px-4 py-16 sm:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 rounded-xl shadow-2xl relative overflow-hidden">
+  <section className="w-full min-h-screen flex flex-col items-center px-4 py-12 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-xl shadow-2xl relative overflow-hidden border border-slate-700/20 ring-1 ring-slate-700/10">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-400/5 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+  <div className="absolute top-0 right-0 w-72 h-72 bg-slate-400/6 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+        {/* subtle vignette for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 pointer-events-none" />
       </div>
 
       <div className="text-center mb-12 max-w-3xl">
-        <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 text-amber-400 drop-shadow-glow animate-fade-in">
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 text-stone-200 drop-shadow-md animate-fade-in">
           Schedule an Appointment
         </h1>
-        <p className="text-lg sm:text-2xl text-amber-200 animate-fade-in delay-100">
-          Book a consultation with our experts to discuss your bathroom remodeling project.
+        <p className="text-base sm:text-lg text-stone-300 animate-fade-in delay-100 max-w-2xl mx-auto">
+          Book a short consultation with our experts to discuss your bathroom remodeling project — we keep it focused, practical and clear.
         </p>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12 w-full max-w-6xl animate-fade-in delay-200">
         {/* Benefits Section */}
         <div className="flex-1">
-          <div className="bg-black/40 rounded-xl p-8 border border-yellow-400/20 shadow-lg h-full">
-            <h2 className="text-2xl font-bold mb-6 text-amber-400">Why Schedule a Consultation?</h2>
+          <div className="bg-black/40 rounded-xl p-8 border border-slate-700/20 shadow-lg h-full">
+            <h2 className="text-2xl font-semibold mb-6 text-stone-200">Why Schedule a Consultation?</h2>
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="bg-yellow-400/10 p-3 rounded-lg mr-4">
-                  <svg className="w-6 h-6 text-yellow-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-slate-400/6 p-3 rounded-lg mr-4">
+                  <svg className="w-6 h-6 text-slate-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-amber-200 mb-1">Expert Advice</h3>
-                  <p className="text-amber-200/80">Get personalized recommendations from experienced professionals.</p>
+                  <h3 className="text-lg font-semibold text-stone-300 mb-1">Expert Advice</h3>
+                  <p className="text-stone-300/80">Get personalized recommendations from experienced professionals.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="bg-yellow-400/10 p-3 rounded-lg mr-4">
-                  <svg className="w-6 h-6 text-yellow-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-slate-400/6 p-3 rounded-lg mr-4">
+                  <svg className="w-6 h-6 text-slate-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-amber-200 mb-1">No Obligation</h3>
-                  <p className="text-amber-200/80">Consultations are completely free with no commitment required.</p>
+                  <h3 className="text-lg font-semibold text-stone-300 mb-1">No Obligation</h3>
+                  <p className="text-stone-300/80">Consultations are completely free with no commitment required.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="bg-yellow-400/10 p-3 rounded-lg mr-4">
-                  <svg className="w-6 h-6 text-yellow-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-slate-400/6 p-3 rounded-lg mr-4">
+                  <svg className="w-6 h-6 text-slate-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-amber-200 mb-1">Custom Solutions</h3>
-                  <p className="text-amber-200/80">Receive tailored solutions for your specific space and needs.</p>
+                  <h3 className="text-lg font-semibold text-stone-300 mb-1">Custom Solutions</h3>
+                  <p className="text-stone-300/80">Receive tailored solutions for your specific space and needs.</p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="bg-yellow-400/10 p-3 rounded-lg mr-4">
-                  <svg className="w-6 h-6 text-yellow-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-slate-400/6 p-3 rounded-lg mr-4">
+                  <svg className="w-6 h-6 text-slate-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 8v4l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-amber-200 mb-1">Time Saving</h3>
-                  <p className="text-amber-200/80">Get all your questions answered in one focused session.</p>
+                  <h3 className="text-lg font-semibold text-stone-300 mb-1">Time Saving</h3>
+                  <p className="text-stone-300/80">Get all your questions answered in one focused session.</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-yellow-400/20">
-              <h3 className="text-lg font-semibold text-amber-200 mb-4">What to Expect</h3>
+            <div className="mt-8 pt-6 border-t border-slate-700/20">
+              <h3 className="text-lg font-semibold text-stone-300 mb-4">What to Expect</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-amber-200/90 text-sm">
+                <li className="flex items-center text-stone-300/90 text-sm">
                   <svg className="w-4 h-4 text-yellow-400 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   30-60 minute consultation
                 </li>
-                <li className="flex items-center text-amber-200/90 text-sm">
-                  <svg className="w-4 h-4 text-amber-400 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <li className="flex items-center text-stone-300/90 text-sm">
+                  <svg className="w-4 h-4 text-slate-300 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   Professional assessment of your needs
                 </li>
-                <li className="flex items-center text-amber-200/90 text-sm">
-                  <svg className="w-4 h-4 text-amber-400 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <li className="flex items-center text-stone-300/90 text-sm">
+                  <svg className="w-4 h-4 text-slate-300 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   Preliminary ideas and suggestions
                 </li>
-                <li className="flex items-center text-amber-200/90 text-sm">
-                  <svg className="w-4 h-4 text-amber-400 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <li className="flex items-center text-stone-300/90 text-sm">
+                  <svg className="w-4 h-4 text-slate-300 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   Next steps and timeline discussion
@@ -210,8 +212,8 @@ export default function Appointment() {
 
         {/* Appointment Form */}
         <div className="flex-1">
-          <div className="bg-black/40 rounded-xl p-8 border border-yellow-400/20 shadow-lg">
-            <h2 className="text-2xl font-bold mb-6 text-amber-400">Book Your Appointment</h2>
+          <div className="bg-black/40 rounded-xl p-8 border border-slate-700/20 shadow-lg">
+            <h2 className="text-2xl font-semibold mb-6 text-stone-200">Book Your Appointment</h2>
             
             {submitStatus === "success" && (
               <div className="mb-6 p-4 bg-green-900/30 border border-green-400/30 rounded-lg text-green-400 animate-fade-in">
@@ -228,11 +230,11 @@ export default function Appointment() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="name">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="name">
                     Full Name *
                   </label>
                   <input
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                     type="text"
                     id="name"
                     name="name"
@@ -244,11 +246,11 @@ export default function Appointment() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="email">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="email">
                     Email Address *
                   </label>
                   <input
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                     type="email"
                     id="email"
                     name="email"
@@ -261,11 +263,11 @@ export default function Appointment() {
               </div>
 
               <div>
-                <label className="block mb-2 text-amber-200 font-semibold" htmlFor="phone">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="phone">
                   Phone Number *
                 </label>
                 <input
-                  className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                   type="tel"
                   id="phone"
                   name="phone"
@@ -278,11 +280,11 @@ export default function Appointment() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="service">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="service">
                     Consultation Type *
                   </label>
                   <select
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                     id="service"
                     name="service"
                     value={formData.service}
@@ -297,11 +299,11 @@ export default function Appointment() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="location">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="location">
                     Meeting Format *
                   </label>
                   <select
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                     id="location"
                     name="location"
                     value={formData.location}
@@ -318,11 +320,11 @@ export default function Appointment() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="date">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="date">
                     Preferred Date *
                   </label>
                   <select
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                     id="date"
                     name="date"
                     value={formData.date}
@@ -345,11 +347,11 @@ export default function Appointment() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="time">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="time">
                     Preferred Time *
                   </label>
                   <select
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                     id="time"
                     name="time"
                     value={formData.time}
@@ -366,11 +368,11 @@ export default function Appointment() {
               </div>
 
               <div>
-                  <label className="block mb-2 text-amber-200 font-semibold" htmlFor="details">
+                  <label className="block mb-2 text-stone-300 font-semibold" htmlFor="details">
                   Project Details & Questions
                 </label>
                 <textarea
-                  className="w-full px-4 py-3 rounded-lg bg-gray-900 text-amber-100 border border-amber-400/30 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-900 text-stone-100 border border-slate-700/30 focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all"
                   id="details"
                   name="details"
                   rows={4}
@@ -383,11 +385,11 @@ export default function Appointment() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-amber-400 text-black py-3 rounded-lg font-bold hover:bg-amber-500 disabled:bg-amber-400/50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                className="w-full bg-slate-200 text-gray-900 py-3 rounded-lg font-bold hover:bg-slate-300 disabled:bg-slate-200/60 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
               >
                 {isSubmitting ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>

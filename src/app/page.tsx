@@ -3,12 +3,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 rounded-xl shadow-2xl relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-24 bg-gradient-to-br from-black/95 via-gray-900/90  rounded-xl shadow-2xl relative overflow-hidden border border-amber-400/8 ring-1 ring-amber-400/6">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-amber-400/5 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-300/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/5 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
+        <div className="absolute top-0 left-0 w-72 h-72 bg-amber-400/6 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-300/12 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-medium" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/6 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse-slow" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 pointer-events-none" />
       </div>
 
       {/* Logo with animation */}
@@ -27,10 +28,10 @@ export default function Home() {
 
       {/* Company Name & Tagline */}
       <div className="text-center mb-10">
-        <h1 className="text-5xl sm:text-7xl font-bold mb-4 text-amber-400 drop-shadow-md animate-fade-in">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-stone-300 drop-shadow-md animate-fade-in">
           NISA REMODELING
         </h1>
-        <h2 className="text-2xl sm:text-4xl font-semibold text-amber-200 animate-fade-in delay-100">
+        <h2 className="text-lg sm:text-2xl font-medium text-stone-200 animate-fade-in delay-100">
           High-end Bathroom Design & Remodeling
         </h2>
       </div>
@@ -38,18 +39,16 @@ export default function Home() {
       {/* Contact Info */}
       <div className="mb-10 text-center animate-fade-in delay-200">
         <p className="text-lg sm:text-xl text-amber-100 mb-4">Want a free consultation? Call us now.</p>
-        <a 
-          href="tel:+17869331329" 
+        <a
+          href="tel:+17869331329"
           className="inline-block bg-amber-400 text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-amber-500 hover:scale-105 transition-all duration-300 transform text-lg"
-        >
-          +1 (786) 933-1329
-        </a>
+        >+1 (786) 933-1329</a>
         <p className="mt-4 text-amber-200/90 animate-pulse text-base">Be, think, do = éxito 💪💪💪🙏🧿</p>
       </div>
 
       {/* Services Section */}
       <section className="w-full max-w-6xl mb-12 animate-fade-in delay-300">
-        <h3 className="text-3xl sm:text-5xl font-bold mb-10 text-center text-amber-400">Our Services</h3>
+  <h3 className="text-2xl sm:text-3xl font-semibold mb-10 text-center text-stone-300">Our Services</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
@@ -75,17 +74,12 @@ export default function Home() {
 
       {/* Testimonials Preview */}
       <section className="w-full max-w-4xl mb-12 animate-fade-in delay-600">
-        <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-amber-400">What Our Clients Say</h3>
+  <h3 className="text-2xl sm:text-3xl font-semibold mb-8 text-center text-stone-300">What Our Clients Say</h3>
         <div className="bg-gray-800/50 rounded-xl p-8 border border-amber-400/30">
           <p className="text-amber-100 italic text-center text-lg">NISA Remodeling transformed our outdated bathroom into a luxurious spa-like retreat. Their attention to detail and quality craftsmanship exceeded our expectations!</p>
           <p className="text-amber-400 text-center mt-6 font-semibold text-base">- Maria Rodriguez, Miami</p>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="mt-auto pt-12 text-center text-amber-200/70 text-base animate-fade-in delay-700">
-        &copy; {new Date().getFullYear()} NISA REMODELING. All rights reserved.
-      </footer>
     </section>
   );
 }
