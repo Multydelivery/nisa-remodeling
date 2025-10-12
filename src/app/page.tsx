@@ -13,8 +13,8 @@ export default function Home() {
       </div>
 
       {/* Logo with animation */}
-      <div className="mb-10 flex justify-center transform transition-all duration-700 hover:scale-105">
-        <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden bg-black/20 shadow-lg border-2 border-amber-400/30 group">
+      <div className="mb-12 flex justify-center transform transition-all duration-700 hover:scale-105">
+        <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-black/30 shadow-2xl border-4 border-amber-400/40 group">
           <Image
             src="/nissaremodelinglogoscshot.jpeg"
             alt="NISA REMODELING logo"
@@ -22,13 +22,16 @@ export default function Home() {
             priority
             className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-amber-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-amber-400/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 rounded-full ring-2 ring-amber-400/20 ring-offset-4 ring-offset-transparent" />
         </div>
       </div>
 
       {/* Company Name & Tagline */}
       <div className="text-center mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-stone-300 drop-shadow-md animate-fade-in">
+        <h1 className="page-title text-stone-300 drop-shadow-md animate-fade-in mb-4">
+          NISA REMODELING
         </h1>
         <h2 className="text-lg sm:text-2xl font-medium text-stone-200 animate-fade-in delay-100">
           High-end Bathroom Design & Remodeling
@@ -37,17 +40,38 @@ export default function Home() {
 
       {/* Contact Info */}
       <div className="mb-10 text-center animate-fade-in delay-200">
-        <p className="text-lg sm:text-xl text-amber-100 mb-4">Want a free consultation? Call us now.</p>
+        <p className="text-lg sm:text-xl text-stone-200 mb-4">Ready to transform your space? Call us for a free consultation.</p>
         <a
           href="tel:+17869331329"
           className="inline-block bg-amber-400 text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-amber-500 hover:scale-105 transition-all duration-300 transform text-lg"
         >+1 (786) 933-1329</a>
-        <p className="mt-4 text-amber-200/90 animate-pulse text-base">Be, think, do = éxito 💪💪💪🙏🧿</p>
+        
+        {/* Professional Values */}
+        <div className="mt-6 px-4 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-stone-300">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.22.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span className="text-sm font-medium whitespace-nowrap">Premium Quality</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span className="text-sm font-medium whitespace-nowrap">Expert Craftsmanship</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-sm font-medium whitespace-nowrap">Guaranteed Results</span>
+          </div>
+        </div>
       </div>
 
       {/* Services Section */}
       <section className="w-full max-w-6xl mb-12 animate-fade-in delay-300">
-  <h3 className="text-2xl sm:text-3xl font-semibold mb-10 text-center text-stone-300">Our Services</h3>
+        <h3 className="text-2xl sm:text-3xl font-semibold mb-10 text-center text-stone-300">Our Services</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
@@ -73,7 +97,7 @@ export default function Home() {
 
       {/* Testimonials Preview */}
       <section className="w-full max-w-4xl mb-12 animate-fade-in delay-600">
-  <h3 className="text-2xl sm:text-3xl font-semibold mb-8 text-center text-stone-300">What Our Clients Say</h3>
+        <h3 className="text-2xl sm:text-3xl font-semibold mb-8 text-center text-stone-300">What Our Clients Say</h3>
         <div className="bg-gray-800/50 rounded-xl p-8 border border-amber-400/30">
           <p className="text-amber-100 italic text-center text-lg">NISA Remodeling transformed our outdated bathroom into a luxurious spa-like retreat. Their attention to detail and quality craftsmanship exceeded our expectations!</p>
           <p className="text-amber-400 text-center mt-6 font-semibold text-base">- Maria Rodriguez, Miami</p>
